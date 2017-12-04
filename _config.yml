@@ -1,7 +1,8 @@
-title: Long Haul
-description: Long Form Jekyll theme built with SASS / COMPASS / SUSY
+title: 하브넷 인턴 기술 블로그
+description: 안녕안녕
+site-title: 헬로우
 
-url: http://brianmaierjr.github.com/long-haul
+url: http://jhheo.github.com/
 baseurl: ""
 paginate_path: "blog/page:num/"
 permalink: blog/:title/
