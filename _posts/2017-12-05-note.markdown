@@ -1,0 +1,51 @@
+---
+layout: post
+title:  "2017-12-05 연구노트"
+categories: note
+---
+### 1.연구내용
+
+#### Jekyll 기본 디렉토리 구조
+jekyll의 기본적인 디렉토리 구조는 다음과 같다.
+
+
+```
+├── _config.yml
+├── _data
+|   └── members.yml
+├── _drafts
+|   ├── begin-with-the-crazy-ideas.md
+|   └── on-simplicity-in-technology.md
+├── _includes
+|   ├── footer.html
+|   └── header.html
+├── _layouts
+|   ├── default.html
+|   └── post.html
+├── _posts
+|   ├── 2007-10-29-why-every-programmer-should-play-nethack.md
+|   └── 2009-04-26-barcamp-boston-4-roundup.md
+├── _sass
+|   ├── _base.scss
+|   └── _layout.scss
+├── _site
+├── .jekyll-metadata
+└── index.html
+```
+
+
+
+
+| 파일 / 디렉토리                                            | 설명                                                                                                                                                                                                                                                 |
+|------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| config.yml                                                | 데이터 설정 파일을 저장하는 공간이다.커맨드라인에서 많은 옵션을 실행할수 있지만명령어 옵션을 외우지 않고 여기에 작성하면 기억두지 않아도 된다.                                                                                                       |
+| drafts                                                    | draft는 원고 초안을 의미하고 작성중이거나 아직 게시를 원하지 않는 게시물을 뜻한다.drafts 디렉토리 안에 게시물제목.md 라는 양식의 이름으로 저장한다.(게시물의 경우 yyyy-mm-dd-게시물제목-.md)                                                        |
+| includes                                                  | 재사용하는 파일을 저장하는 곳이다. 게시물이나 layout과 함께 사용하기도 한다.Liquid 태그를 사용하면 디렉토리 안의 file.ext파일에 작성된 코드가 삽입된다.                                               |
+| layouts                                                   | 게시물을 포장하는 템플릿이 저장되어 있는곳이다.게시물별 레이아웃은 YAML 머리말을 기준으로 결정된다.{{ content }} 태그를 사용하여 웹페이지 콘텐츠에 삽입한다.                                                                                         |
+| posts                                                     | 동적 게시물이 저장되는 곳이다.파일 이름 문법이 중요하므로 다음의 형식을 꼭 지켜야 한다.YEAR-MONTH-DAY-title.MARKUP왜냐하면 Permanlinks는 포스트 별로 정의할 수 있지만date와 markup languate는 파일이름으로 결정되기 때문이다.                        |
+| date                                                      | 적절하게 포맷팅된 데이터가 저장되어 있는 곳이다. Jekyll 엔진이 여기에 저장된 파일들(.yml, .yaml, .json, .csv 확장자)을 자동으로 로드하고 'site.data'로 사용가능하다.예를들어 members.yml 파일이 있다면 'site.data.members'로 데이터에 접근할수 있다. |
+| sass                                                      | main.scss로 import될수 있는 scss파일들이 저장되는 곳이다.main.scss는 블로그에서 사용되는 main.css에 정의 될 내용들을 담고 있다.scss ( css를 간편하기 작성하기 위한 언어 )                                                                            |
+| site                                                      | Jekyll 엔진이 변환을 끝낸 사이트가 저장되는 공간이다.이 디렉토리를 .gitignore에 추가하는 것이 좋다.                                                                                                                                                  |
+| .jekyll-metadata                                           | 마지막으로 빌드되고 어떤 파일이 한번도 수정되지 않았는지,다음 빌드에 어떤파일이 재생성 되어야 하는지와 같은 기록들을 가지고 있다.이 공간을 .gitignore에 추가하는 것이 좋다.                                                                          |
+| index.html orindex.md andother HTML,Markdown, Textilefiles | 파일의 YAML Front Matter 부분에 작성된 대로 jekyll에 의해 해석되게 된다..html, .markdown, .md, textile 파일등이 여기에 해당한다.                                                                                                                     |
+| Other Files/Folders                                        | css, image 디렉토리, favicon.ico 등의 파일들은 그대로 생성된 사이트에 복사된다.                                                                                                                                                                      |
