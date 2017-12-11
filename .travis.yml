@@ -11,6 +11,12 @@ before_script:
 # path to our build script.
 # Travis will run `bundle install` by default before running our script
 script: ./script/cibuild
+
+branches:
+  only:
+  - gh-pages     # gh-pages 브랜치를 테스트 함
+  - /pages-(.*)/ # "pages-" 로 시작하는 모든 브랜치를 테스트 함
+
 #exclude: [vendor]
 #sudo: false
 
