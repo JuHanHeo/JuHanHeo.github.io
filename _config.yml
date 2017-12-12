@@ -30,6 +30,9 @@ theme: minima
 plugins:
   - jekyll-feed
   - jekyll-paginate-v2
+  - jekyll-sitemap
+  - jekyll-redirect-from
+  - jekyll-compose
 
 # pagetype = 페이징 방법 { numbering || simple }
 # limit_page = 한 화면에 보여줄 페이지 수
